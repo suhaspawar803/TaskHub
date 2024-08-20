@@ -26,9 +26,9 @@ SECRET_KEY = 'django-insecure-@t4$mxfqb#tl7by)o4^db$u09o(ssi#$k-vxkkdr6ikpxz824-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
-
+WSGI_APPLICATION = 'taskhub.wsgi.app'
 # Application definition
 
 INSTALLED_APPS = [
