@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text File Viewer</title>
+<style>
+    #container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .file-button {
+        margin: 5px;
+    }
+</style>
+</head>
+<body>
+<center>
+<textarea type="text" id="textField" ></textarea>
+<div id="container">
+    <button class="file-button" onclick="loadFile('Slip1.txt')">Slip 1</button>
+    <button class="file-button" onclick="loadFile('Slip2.txt')">Slip 2</button>
+    <button class="file-button" onclick="loadFile('Slip3.txt')">Slip 3</button>
+    <button class="file-button" onclick="loadFile('Slip4.txt')">Slip 4</button>
+    <button class="file-button" onclick="loadFile('Slip5.txt')">Slip 5</button> 
+    <button class="file-button" onclick="loadFile('Slip6.txt')">Slip 6</button> 
+    <button class="file-button" onclick="loadFile('Slip7.txt')">Slip 7</button>
+    <button class="file-button" onclick="loadFile('Slip8.txt')">Slip 8</button> 
+    <button class="file-button" onclick="loadFile('Slip9.txt')">Slip 9</button> 
+    <button class="file-button" onclick="loadFile('Slip10.txt')">Slip 10</button> 
+    <button class="file-button" onclick="loadFile('Slip11.txt')">Slip 11</button>
+    <button class="file-button" onclick="loadFile('Slip12.txt')">Slip 12</button>
+    <button class="file-button" onclick="loadFile('Slip13.txt')">Slip 13</button> 
+    <button class="file-button" onclick="loadFile('Slip14.txt')">Slip 14</button>
+    <button class="file-button" onclick="loadFile('Slip15.txt')">Slip 15</button> 
+    <button class="file-button" onclick="loadFile('Slip16.txt')">Slip 16</button>
+    <button class="file-button" onclick="loadFile('Slip17.txt')">Slip 17</button>
+     <button class="file-button" onclick="loadFile('Slip18.txt')">Slip 18</button> 
+    <button class="file-button" onclick="loadFile('Slip19.txt')">Slip 19</button>
+    <button class="file-button" onclick="loadFile('Slip20.txt')">Slip 20</button>
+     <button class="file-button" onclick="loadFile('Slip21.txt')">Slip 21</button>
+    <button class="file-button" onclick="loadFile('Slip22.txt')">Slip 22</button>
+    <button class="file-button" onclick="loadFile('Slip23.txt')">Slip 23</button>
+    <button class="file-button" onclick="loadFile('Slip24.txt')">Slip 24</button>
+    <button class="file-button" onclick="loadFile('Slip25.txt')">Slip 25</button> 
+
+    <!-- Add more buttons for more files -->
+</div>
+</center>
+<script>
+    function loadFile(file) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    document.getElementById('textField').value = xhr.responseText;
+                } else {
+                    document.getElementById('textField').value = "Error loading file.";
+                }
+            }
+        };
+        xhr.open('GET', file, true);
+        xhr.send();
+    }
+    </script>
+
+</body>
+</html>
